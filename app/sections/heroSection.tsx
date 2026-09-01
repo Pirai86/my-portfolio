@@ -8,7 +8,10 @@ const outfit_extralight = Outfit({
 
 export default function HeroSection() {
   return (
-    <section className="bg-black w-screen h-[90vh] flex justify-center p-8 lg:px-100 pt-0 pb-0 flex-col overflow-hidden top-0">
+    <section
+      id="home"
+      className="bg-black w-screen h-[90vh] flex justify-center p-8 lg:px-100 pt-0 pb-0 flex-col overflow-hidden top-0 scroll-mt-[10vh]"
+    >
       <div className="w-full h-full border-l border-r border-gray-600 flex items-center justify-center">
         <CodeXml size={150} color="#e17100" />
       </div>

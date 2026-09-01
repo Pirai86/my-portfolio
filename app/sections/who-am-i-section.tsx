@@ -1,9 +1,13 @@
 import Image from "next/image";
-import SkillComponent from "@/app/component/skill-component";
+import FilterComponent from "@/app/component/filter-component";
+import { skill_gridList, skill_filter_list } from "@/app/data/data";
 
 export default function WhoAmISection() {
   return (
-    <section className="w-screen h-max bg-white p-8 pb-20 lg:px-100">
+    <section
+      id="who-am-i"
+      className="w-screen h-max bg-white p-8 pb-20 lg:px-100 scroll-mt-[10vh]"
+    >
       <h1 className="font-black text-3xl text-black text-center mt-12">
         Who <span className={`font-light`}>am I?</span>
       </h1>
@@ -29,8 +33,8 @@ export default function WhoAmISection() {
       </div>
       <p className="text-gray-500 text-sm lg:text-lg! mt-10 leading-5.5 lg:leading-7 lg:px-10 lg:text-center text-justify">
         I am a full stack engineer in Chennai. I&apos;m very passionate &
-        dedicated to my work. With 5+ years experience as a professional web
-        application developer.{" "}
+        dedicated to my work. <br />
+        With 5+ years experience as a professional web application developer.{" "}
         <span className="hidden lg:block">
           I have acquired the skills and knowledge necessary to create an
           application from scratch, Developing UIs to Deployment.
@@ -40,9 +44,12 @@ export default function WhoAmISection() {
         I have acquired the skills and knowledge necessary to create an
         application from scratch, Developing UIs to Deployment.
       </p>
-      <div className="text-black mt-9">
+      <div id="skills" className="text-black mt-9 scroll-mt-[10vh]">
         <h1 className="border-b text-left font-black text-2xl pb-4">SKILLS</h1>
-        <SkillComponent />
+        <FilterComponent
+          gridList={skill_gridList}
+          filterList={skill_filter_list}
+        />
       </div>
     </section>
   );
