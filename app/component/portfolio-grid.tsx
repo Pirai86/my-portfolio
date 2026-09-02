@@ -1,6 +1,6 @@
 "use client";
 
-import { useMemo, useRef, useState } from "react";
+import { useMemo, useState } from "react";
 import Link from "next/link";
 import { ImageIcon, Play } from "lucide-react";
 import { portfolio_filter_list, portfolio_gridList } from "@/app/data/data";
@@ -10,7 +10,6 @@ export default function PortfolioGrid() {
   const [selectedFilter, setSelectedFilter] = useState(
     portfolio_filter_list[0],
   );
-  const hoverTimeout = useRef<ReturnType<typeof setTimeout> | null>(null);
 
   const projects = useMemo(() => {
     if (selectedFilter === "All") return portfolio_gridList;
