@@ -33,6 +33,12 @@ export default function FilterCategories({
       >
         Cloud
       </button>
+      <button
+        className={`border px-3 py-0.5 rounded-2xl cursor-pointer ${selectedFilter === "Tools" ? "bg-black text-white" : ""}`}
+        onClick={() => setSelectedFilter("Tools")}
+      >
+        Tools
+      </button>
     </div>
   );
 }

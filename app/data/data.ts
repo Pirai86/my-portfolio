@@ -5,6 +5,7 @@ export const skill_filter_list = [
   "Frameworks",
   "Programming Language",
   "Cloud",
+  "Tools",
 ];
 
 export const skill_gridList: gridListType[] = [
@@ -71,6 +72,30 @@ export const skill_gridList: gridListType[] = [
     level_tag_color: "blue",
     icon: "/aws.svg",
     skill_category: "Cloud",
+  },
+  {
+    id: 9,
+    name: "Linux",
+    level_tag: "Basic",
+    level_tag_color: "blue",
+    icon: "/linux-tux.svg",
+    skill_category: "Tools",
+  },
+  {
+    id: 10,
+    name: "Docker",
+    level_tag: "Basic",
+    level_tag_color: "blue",
+    icon: "/docker.svg",
+    skill_category: "Tools",
+  },
+  {
+    id: 11,
+    name: "Git",
+    level_tag: "Intermediate",
+    level_tag_color: "orange",
+    icon: "/git.svg",
+    skill_category: "Tools",
   },
 ];
 
@@ -209,7 +234,6 @@ export const portfolio_gridList: PortfolioProject[] = [
     ],
     tags: ["SwiftUI", "WhisperKit", "React", "macOS"],
     impact: "400+ users",
-    tags: ["SwiftUI", "WhisperKit", "React", "macOS"],
     media: {
       kind: "image",
       src: "/echodolphin.avif",
