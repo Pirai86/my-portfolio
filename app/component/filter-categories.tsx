@@ -22,6 +22,12 @@ export default function FilterCategories({
         Frameworks
       </button>
       <button
+        className={`border px-3 py-0.5 rounded-2xl cursor-pointer ${selectedFilter === "Databases" ? "bg-black text-white" : ""}`}
+        onClick={() => setSelectedFilter("Databases")}
+      >
+        Databases
+      </button>
+      <button
         className={`border px-3 py-0.5 rounded-2xl cursor-pointer ${selectedFilter === "Prog_lang" ? "bg-black text-white" : ""}`}
         onClick={() => setSelectedFilter("Prog_lang")}
       >

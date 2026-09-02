@@ -3,6 +3,7 @@ import { gridListType } from "@/app/component/filter-component";
 export const skill_filter_list = [
   "All",
   "Frameworks",
+  "Databases",
   "Programming Language",
   "Cloud",
   "Tools",
@@ -39,10 +40,18 @@ export const skill_gridList: gridListType[] = [
     level_tag: "Intermediate",
     level_tag_color: "orange",
     icon: "/postgresql.svg",
-    skill_category: "Frameworks",
+    skill_category: "Databases",
   },
   {
     id: 5,
+    name: "MongoDB",
+    level_tag: "Intermediate",
+    level_tag_color: "orange",
+    icon: "/mongodb.svg",
+    skill_category: "Databases",
+  },
+  {
+    id: 6,
     name: "Python",
     level_tag: "Advanced",
     level_tag_color: "red",
@@ -50,7 +59,7 @@ export const skill_gridList: gridListType[] = [
     skill_category: "Prog_lang",
   },
   {
-    id: 6,
+    id: 7,
     name: "TypeScript",
     level_tag: "Proficient",
     level_tag_color: "green",
@@ -58,7 +67,7 @@ export const skill_gridList: gridListType[] = [
     skill_category: "Prog_lang",
   },
   {
-    id: 7,
+    id: 8,
     name: "JavaScript",
     level_tag: "Proficient",
     level_tag_color: "green",
@@ -66,7 +75,7 @@ export const skill_gridList: gridListType[] = [
     skill_category: "Prog_lang",
   },
   {
-    id: 8,
+    id: 9,
     name: "Amazon Web Service",
     level_tag: "Basic",
     level_tag_color: "blue",
@@ -74,7 +83,7 @@ export const skill_gridList: gridListType[] = [
     skill_category: "Cloud",
   },
   {
-    id: 9,
+    id: 10,
     name: "Linux",
     level_tag: "Basic",
     level_tag_color: "blue",
@@ -82,7 +91,7 @@ export const skill_gridList: gridListType[] = [
     skill_category: "Tools",
   },
   {
-    id: 10,
+    id: 11,
     name: "Docker",
     level_tag: "Basic",
     level_tag_color: "blue",
@@ -90,11 +99,11 @@ export const skill_gridList: gridListType[] = [
     skill_category: "Tools",
   },
   {
-    id: 11,
-    name: "Git",
+    id: 12,
+    name: "Github",
     level_tag: "Intermediate",
     level_tag_color: "orange",
-    icon: "/git.svg",
+    icon: "/github.svg",
     skill_category: "Tools",
   },
 ];
