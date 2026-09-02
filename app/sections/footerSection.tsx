@@ -25,7 +25,10 @@ function scrollToSection(event: MouseEvent<HTMLAnchorElement>, id: string) {
 
 export default function FooterSection() {
   return (
-    <footer className="bg-black w-screen p-8 pb-10 lg:px-100 border-t border-gray-600">
+    <footer
+      id="contact"
+      className="bg-black w-screen p-8 pb-10 lg:px-100 border-t border-gray-600 scroll-mt-[10vh]"
+    >
       <div className="border-l border-r border-gray-600 px-4 py-12 lg:px-8">
         <div className="flex flex-col gap-12 lg:flex-row lg:justify-between">
           <div>

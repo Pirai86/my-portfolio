@@ -1,3 +1,5 @@
+"use client";
+
 import { CodeXml, ArrowRight } from "lucide-react";
 import { Outfit } from "next/font/google";
 const outfit_extralight = Outfit({
@@ -5,6 +7,12 @@ const outfit_extralight = Outfit({
   subsets: ["latin"],
   weight: "200",
 });
+
+function scrollToSection(id: string) {
+  const target = document.getElementById(id);
+  if (!target) return;
+  target.scrollIntoView({ behavior: "smooth", block: "start" });
+}
 
 export default function HeroSection() {
   return (
@@ -35,7 +43,10 @@ export default function HeroSection() {
             and engineering teams.
           </p>
           <div className="pl-2">
-            <button className="group cursor-pointer text-black w-max font-bold text-xs gap-4 bg-amber-600 uppercase rounded-4xl p-2 px-6 pr-2 mt-8 tracking-widest flex items-center justify-between">
+            <button
+              className="group cursor-pointer text-black w-max font-bold text-xs gap-4 bg-amber-600 uppercase rounded-4xl p-2 px-6 pr-2 mt-8 tracking-widest flex items-center justify-between"
+              onClick={() => scrollToSection("portfolio")}
+            >
               View my works
               <span className="border border-white w-10! h-10! rounded-4xl bg-white flex items-center justify-center group-hover:scale-115 transition-transform duration-200 ease-in-out">
                 <ArrowRight />
