@@ -189,6 +189,11 @@ export const portfolio_gridList: PortfolioProject[] = [
     title: "Geolocation tracker",
     company: "AppGrape",
     period: "Oct 2025 — Present",
+    media: {
+      kind: "video",
+      src: "/heatmap_new.mov",
+      mime: "video/quicktime",
+    },
     description:
       "War-room dashboard that turns workforce GPS into a live heatmap, with PostgreSQL aggregates and Azure Functions for real-time queries.",
     highlights: [
