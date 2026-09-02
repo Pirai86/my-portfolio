@@ -4,13 +4,12 @@ import { useMemo, useRef, useState } from "react";
 import Link from "next/link";
 import { ImageIcon, Play } from "lucide-react";
 import { portfolio_filter_list, portfolio_gridList } from "@/app/data/data";
-import ProjectMediaPlayer, { mediaLabel } from "@/app/component/project-media";
+import { mediaLabel } from "@/app/component/project-media";
 
 export default function PortfolioGrid() {
   const [selectedFilter, setSelectedFilter] = useState(
     portfolio_filter_list[0],
   );
-  const [hoveredSlug, setHoveredSlug] = useState<string | null>(null);
   const hoverTimeout = useRef<ReturnType<typeof setTimeout> | null>(null);
 
   const projects = useMemo(() => {
@@ -46,22 +45,7 @@ export default function PortfolioGrid() {
         {projects.map((project) => {
           const label = mediaLabel(project.media);
           return (
-            <article
-              key={project.id}
-              className="group relative"
-              onMouseEnter={() => {
-                if (!project.media) return;
-                hoverTimeout.current = setTimeout(() => {
-                  setHoveredSlug(project.slug);
-                }, 350);
-              }}
-              onMouseLeave={() => {
-                if (hoverTimeout.current) clearTimeout(hoverTimeout.current);
-                setHoveredSlug((current) =>
-                  current === project.slug ? null : current,
-                );
-              }}
-            >
+            <article key={project.id} className="group relative">
               <Link
                 href={`/portfolio/${project.slug}`}
                 className="flex h-full flex-col border border-gray-200 bg-white p-6 transition-colors duration-200 hover:border-gray-900"
@@ -106,25 +90,6 @@ export default function PortfolioGrid() {
                   ))}
                 </div>
               </Link>
-
-              {project.media && hoveredSlug === project.slug ? (
-                <div
-                  className="absolute top-0 right-[-150%] z-40 hidden -translate-x-1/2 pt-3 lg:block"
-                  onClick={(event) => event.preventDefault()}
-                  onPointerDown={(event) => event.stopPropagation()}
-                >
-                  <div className="border border-gray-200 bg-white p-2 shadow-xl">
-                    <ProjectMediaPlayer
-                      media={project.media}
-                      title={project.title}
-                      variant="preview"
-                    />
-                    {/*<p className="mt-2 px-1 text-xs text-gray-400">
-                      Play here, or click the card for the full write-up.
-                    </p>*/}
-                  </div>
-                </div>
-              ) : null}
             </article>
           );
         })}
