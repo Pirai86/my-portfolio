@@ -10,10 +10,10 @@ const LINKEDIN_URL = "https://www.linkedin.com/in/pirai86/";
 const GITHUB_URL = "https://github.com/Pirai86";
 
 const navLinks = [
-  { href: "#home", id: "home", label: "Home" },
-  { href: "#who-am-i", id: "who-am-i", label: "Who am I" },
-  { href: "#skills", id: "skills", label: "Skills" },
-  { href: "#portfolio", id: "portfolio", label: "Portfolio" },
+  { href: "/#home", id: "home", label: "Home" },
+  { href: "/#who-am-i", id: "who-am-i", label: "Who am I" },
+  { href: "/#skills", id: "skills", label: "Skills" },
+  { href: "/#portfolio", id: "portfolio", label: "Portfolio" },
 ];
 
 function scrollToSection(event: MouseEvent<HTMLAnchorElement>, id: string) {
@@ -29,12 +29,9 @@ export default function FooterSection() {
       <div className="border-l border-r border-gray-600 px-4 py-12 lg:px-8">
         <div className="flex flex-col gap-12 lg:flex-row lg:justify-between">
           <div>
-            <p className="text-4xl font-bold text-white">P.</p>
-            <p className="mt-4 text-xl font-bold text-white">Piraisudan R</p>
-            <p className="mt-1 text-gray-400">Full Stack Engineer · Chennai</p>
-            <p className="mt-4 max-w-xs text-sm text-gray-500">
-              Building web products from UI to production.
-            </p>
+            {/*<p className="text-4xl font-bold text-white">P.</p>*/}
+            <p className="text-xl font-bold text-white">Piraisudan R</p>
+            <p className="mt-1 text-gray-400">Full Stack Engineer · India</p>
           </div>
 
           <div>

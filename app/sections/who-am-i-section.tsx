@@ -31,16 +31,17 @@ export default function WhoAmISection() {
           </div>
         </div>
       </div>
-      <p className="text-gray-500 text-sm lg:text-lg! mt-10 leading-5.5 lg:leading-7 lg:px-10 lg:text-center text-justify">
-        I am a full stack engineer in Chennai. I&apos;m very passionate &
-        dedicated to my work. <br />
+      <p className="text-gray-500 text-sm lg:text-lg! mt-10 leading-5.5 lg:leading-7 lg:px-10 md:text-center lg:text-center text-justify">
+        I&apos;m very passionate & dedicated to my
+        work. <br />
         With 5+ years experience as a professional web application developer.{" "}
         <span className="hidden lg:block">
           I have acquired the skills and knowledge necessary to create an
-          application from scratch, Developing UIs to Deployment.
+          application from scratch, <br />
+          from Developing UIs to Deployment.
         </span>
       </p>
-      <p className="text-gray-500 text-sm lg:text-lg! lg:hidden mt-4 lg:leading-7 text-justify">
+      <p className="text-gray-500 text-sm lg:text-lg! lg:hidden lg:leading-7 text-justify">
         I have acquired the skills and knowledge necessary to create an
         application from scratch, Developing UIs to Deployment.
       </p>

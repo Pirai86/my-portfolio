@@ -18,7 +18,7 @@ export default function FilterGrid({
   }
 
   return (
-    <div className="grid grid-cols-1 lg:grid-cols-4 gap-4 lg:gap-6 mt-6">
+    <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-4 lg:gap-6 mt-6">
       {filteredList.map((item) => {
         return (
           <div
