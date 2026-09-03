@@ -1,12 +1,6 @@
 "use client";
 
 import { CodeXml, ArrowRight } from "lucide-react";
-import { Outfit } from "next/font/google";
-const outfit_extralight = Outfit({
-  variable: "--font-outfit",
-  subsets: ["latin"],
-  weight: "200",
-});
 
 function scrollToSection(id: string) {
   const target = document.getElementById(id);
@@ -28,9 +22,7 @@ export default function HeroSection() {
           <h1 className="text-3xl lg:text-6xl font-bold text-white">
             Piraisudan R
           </h1>
-          <p
-            className={`text-md lg:text-2xl lg:mt-4 text-gray-300 font-light ${outfit_extralight.variable}`}
-          >
+          <p className="text-md mt-0 font-[family-name:var(--font-outfit)] text-gray-300 font-extralight lg:mt-4 lg:text-2xl">
             Full Stack Engineer
           </p>
         </div>

@@ -5,9 +5,11 @@ import { ArrowRight, Mail } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 
-const EMAIL = "piraisudan590@gmail.com";
-const LINKEDIN_URL = "https://www.linkedin.com/in/pirai86/";
-const GITHUB_URL = "https://github.com/Pirai86";
+import {
+  GITHUB_URL,
+  LINKEDIN_URL,
+  SITE_EMAIL,
+} from "@/app/lib/site";
 
 const navLinks = [
   { href: "/#home", id: "home", label: "Home" },
@@ -37,7 +39,7 @@ export default function FooterSection() {
             <p className="mt-1 text-gray-400">Full Stack Engineer · India</p>
           </div>
 
-          <div>
+          <nav aria-label="Footer">
             <p className="text-xs font-bold uppercase tracking-widest text-gray-500">
               Navigate
             </p>
@@ -54,21 +56,21 @@ export default function FooterSection() {
                 </li>
               ))}
             </ul>
-          </div>
+          </nav>
 
           <div>
             <p className="text-xs font-bold uppercase tracking-widest text-gray-500">
               Connect
             </p>
             <a
-              href={`mailto:${EMAIL}`}
+              href={`mailto:${SITE_EMAIL}`}
               className="mt-4 flex items-center gap-2 text-gray-300 transition-colors duration-200 hover:text-amber-600"
             >
               <Mail size={16} />
-              {EMAIL}
+              {SITE_EMAIL}
             </a>
             <a
-              href={`mailto:${EMAIL}`}
+              href={`mailto:${SITE_EMAIL}`}
               className="group mt-6 inline-flex w-max cursor-pointer items-center justify-between gap-4 rounded-4xl bg-amber-600 p-2 px-6 pr-2 text-xs font-bold uppercase tracking-widest text-black"
             >
               Get in touch
@@ -86,7 +88,7 @@ export default function FooterSection() {
               href={LINKEDIN_URL}
               target="_blank"
               rel="noopener noreferrer"
-              aria-label="LinkedIn"
+              aria-label="Piraisudan R on LinkedIn"
             >
               <Image src="/linkedin.svg" alt="" width={30} height={30} />
             </Link>
@@ -94,7 +96,7 @@ export default function FooterSection() {
               href={GITHUB_URL}
               target="_blank"
               rel="noopener noreferrer"
-              aria-label="GitHub"
+              aria-label="Piraisudan R on GitHub"
             >
               <Image
                 src="/github.svg"

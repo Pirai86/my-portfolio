@@ -42,6 +42,7 @@ export default function ProjectMediaPlayer({
         controls
         playsInline
         preload="metadata"
+        title={title}
         className={`${frame} bg-black`}
       >
         <source src={media.src} type={media.mime} />

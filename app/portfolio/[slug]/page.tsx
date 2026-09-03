@@ -4,10 +4,12 @@ import { ArrowLeft } from "lucide-react";
 import SiteHeader from "@/app/component/site-header";
 import FooterSection from "@/app/sections/footerSection";
 import ProjectMediaPlayer from "@/app/component/project-media";
+import JsonLd from "@/app/component/json-ld";
 import {
   getProjectBySlug,
   portfolio_gridList,
 } from "@/app/data/data";
+import { SITE_NAME, getProjectJsonLd } from "@/app/lib/site";
 
 export function generateStaticParams() {
   return portfolio_gridList.map((project) => ({ slug: project.slug }));
@@ -20,10 +22,44 @@ export async function generateMetadata({
 }): Promise<Metadata> {
   const { slug } = await params;
   const project = getProjectBySlug(slug);
-  if (!project) return { title: "Project · Piraisudan R" };
+  if (!project) {
+    return { title: "Project not found", robots: { index: false } };
+  }
+
+  const url = `/portfolio/${slug}`;
+  const ogImages =
+    project.media?.kind === "youtube"
+      ? [
+          {
+            url: `https://img.youtube.com/vi/${project.media.videoId}/maxresdefault.jpg`,
+            alt: project.title,
+          },
+        ]
+      : project.media?.kind === "image"
+        ? [{ url: project.media.src, alt: project.media.alt }]
+        : undefined;
+
   return {
-    title: `${project.title} · Piraisudan R`,
+    title: project.title,
     description: project.description,
+    alternates: {
+      canonical: url,
+    },
+    openGraph: {
+      type: "article",
+      locale: "en_US",
+      url,
+      siteName: SITE_NAME,
+      title: project.title,
+      description: project.description,
+      authors: [SITE_NAME],
+      ...(ogImages ? { images: ogImages } : {}),
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: project.title,
+      description: project.description,
+    },
   };
 }
 
@@ -36,10 +72,16 @@ export default async function ProjectPage({
   const project = getProjectBySlug(slug);
   if (!project) notFound();
 
+  const jsonLd = getProjectJsonLd(slug);
+
   return (
     <div className="h-screen w-full overflow-x-hidden overflow-y-scroll bg-[#f2f2f2]">
+      {jsonLd ? <JsonLd data={jsonLd} /> : null}
       <SiteHeader />
-      <article className="mx-auto w-full max-w-3xl px-6 py-12 lg:px-0">
+      <article
+        id="main-content"
+        className="mx-auto w-full max-w-3xl px-6 py-12 lg:px-0"
+      >
         <a
           href="/#portfolio"
           className="inline-flex items-center gap-2 text-sm text-gray-500 transition-colors hover:text-black"

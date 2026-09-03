@@ -67,9 +67,9 @@ export default function PortfolioGrid() {
                     <p className="text-xs text-gray-400">{project.period}</p>
                   </div>
                 </div>
-                <h2 className="mt-3 text-lg font-semibold leading-snug text-black">
+                <h3 className="mt-3 text-lg font-semibold leading-snug text-black">
                   {project.title}
-                </h2>
+                </h3>
                 <p className="mt-3 flex-1 text-sm leading-6 text-gray-500">
                   {project.description}
                 </p>
