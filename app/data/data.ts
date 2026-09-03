@@ -156,8 +156,8 @@ export const portfolio_gridList: PortfolioProject[] = [
     tags: ["Next.js", "PostgreSQL", "Supabase", "Payments"],
     media: {
       kind: "video",
-      src: "/e-commerce.mov",
-      mime: "video/quicktime",
+      src: "/e-commerce.mp4",
+      mime: "video/mp4",
     },
   },
   {
@@ -191,8 +191,8 @@ export const portfolio_gridList: PortfolioProject[] = [
     period: "Oct 2025 - Present",
     media: {
       kind: "video",
-      src: "/heatmap_new.mov",
-      mime: "video/quicktime",
+      src: "/heatmap_new.mp4",
+      mime: "video/mp4",
     },
     description:
       "War-room dashboard that turns workforce GPS into a live heatmap, with PostgreSQL aggregates and Azure Functions for real-time queries.",
