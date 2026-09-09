@@ -9,21 +9,25 @@ import {
   getPortfolioItemListJsonLd,
   getWebsiteJsonLd,
 } from "@/app/lib/site";
+import { Analytics } from "@vercel/analytics/next";
 
 export default function Home() {
   return (
-    <div
-      id="main-content"
-      className="h-screen w-full overflow-x-hidden overflow-y-scroll bg-white"
-    >
-      <JsonLd data={getPersonJsonLd()} />
-      <JsonLd data={getWebsiteJsonLd()} />
-      <JsonLd data={getPortfolioItemListJsonLd()} />
-      <SiteHeader />
-      <HeroSection />
-      <WhoAmISection />
-      <PortfolioSection />
-      <FooterSection />
-    </div>
+    <>
+      <Analytics />
+      <div
+        id="main-content"
+        className="h-screen w-full overflow-x-hidden overflow-y-scroll bg-white"
+      >
+        <JsonLd data={getPersonJsonLd()} />
+        <JsonLd data={getWebsiteJsonLd()} />
+        <JsonLd data={getPortfolioItemListJsonLd()} />
+        <SiteHeader />
+        <HeroSection />
+        <WhoAmISection />
+        <PortfolioSection />
+        <FooterSection />
+      </div>
+    </>
   );
 }

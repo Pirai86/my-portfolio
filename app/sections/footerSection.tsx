@@ -5,11 +5,7 @@ import { ArrowRight, Mail } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 
-import {
-  GITHUB_URL,
-  LINKEDIN_URL,
-  SITE_EMAIL,
-} from "@/app/lib/site";
+import { GITHUB_URL, LINKEDIN_URL, SITE_EMAIL } from "@/app/lib/site";
 
 const navLinks = [
   { href: "/#home", id: "home", label: "Home" },
