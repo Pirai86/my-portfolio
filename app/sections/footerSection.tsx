@@ -110,7 +110,7 @@ export default function FooterSection() {
             <p>
               © {year} Piraisudan R · Full Stack Engineer · {SITE_LOCATION}
             </p>
-            <p>Built with Next.js and Tailwind CSS.</p>
+            {/* <p>Built with Next.js and Tailwind CSS.</p> */}
           </div>
         </div>
       </Container>
