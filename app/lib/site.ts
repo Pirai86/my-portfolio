@@ -6,8 +6,24 @@ export const SITE_TITLE = `${SITE_NAME} | ${SITE_JOB_TITLE}`;
 export const SITE_DESCRIPTION =
   "Full stack engineer building React, TypeScript, and Next.js products — e-commerce, ERP, analytics, and internal tools. 5+ years shipping production systems.";
 export const SITE_EMAIL = "piraisudan590@gmail.com";
+export const SITE_LOCATION = "India";
 export const LINKEDIN_URL = "https://www.linkedin.com/in/pirai86/";
 export const GITHUB_URL = "https://github.com/Pirai86";
+
+/**
+ * Optional PDF. If set (e.g. "/resume.pdf" in `public/`), header and hero
+ * download that file. If null, they link to the on-site `/resume` page instead.
+ */
+export const RESUME_URL: string | null = null;
+
+export const NAV_LINKS = [
+  { href: "/#home", id: "home", label: "Home" },
+  { href: "/#about", id: "about", label: "About" },
+  { href: "/#experience", id: "experience", label: "Experience" },
+  { href: "/#skills", id: "skills", label: "Skills" },
+  { href: "/#portfolio", id: "portfolio", label: "Work" },
+  { href: "/#contact", id: "contact", label: "Contact" },
+] as const;
 export const SITE_KEYWORDS = [
   "Piraisudan R",
   "Full Stack Engineer",

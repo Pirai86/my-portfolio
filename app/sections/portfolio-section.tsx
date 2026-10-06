@@ -1,21 +1,24 @@
+import Container from "@/app/component/container";
+import Reveal from "@/app/component/reveal";
+import SectionHeading from "@/app/component/section-heading";
 import PortfolioGrid from "@/app/component/portfolio-grid";
 
 export default function PortfolioSection() {
   return (
     <section
       id="portfolio"
-      className="w-screen h-max bg-[#f2f2f2] p-8 pb-20 lg:px-100 scroll-mt-[10vh]"
+      className="w-full scroll-mt-16 bg-white py-20 lg:py-28"
     >
-      <div className="mt-9 text-black">
-        <h2 className="border-b pb-4 text-left text-2xl font-black uppercase">
-          Portfolio
-        </h2>
-        {/*<p className="mt-4 max-w-2xl text-sm leading-6 text-gray-500 lg:text-base">
-          Selected work across e-commerce, ERP, analytics, and internal tools -
-          from product UI through production systems.
-        </p>*/}
-        <PortfolioGrid />
-      </div>
+      <Container>
+        <SectionHeading
+          eyebrow="Work"
+          title="Selected projects"
+          description="Eight projects across e-commerce, ERP, scientific analytics, and a large C++ migration. Each one has a short write-up on what was built, why, and what was hard."
+        />
+        <Reveal delay={100}>
+          <PortfolioGrid />
+        </Reveal>
+      </Container>
     </section>
   );
 }

@@ -1,117 +1,214 @@
-import { gridListType } from "@/app/component/filter-component";
+export type FilterOption = { label: string; value: string };
 
-export const skill_filter_list = [
-  "All",
-  "Frameworks",
-  "Databases",
-  "Programming Language",
-  "Cloud",
-  "Tools",
+export type Skill = {
+  id: number;
+  name: string;
+  icon: string;
+  category: SkillCategory;
+  /** Short context that tells a recruiter *how* the skill was used. */
+  note: string;
+};
+
+export type SkillCategory =
+  | "frontend"
+  | "backend"
+  | "databases"
+  | "cloud"
+  | "tools";
+
+export const skill_filter_list: FilterOption[] = [
+  { label: "All", value: "all" },
+  { label: "Frontend", value: "frontend" },
+  { label: "Backend", value: "backend" },
+  { label: "Databases", value: "databases" },
+  { label: "Cloud & DevOps", value: "cloud" },
+  { label: "Tools", value: "tools" },
 ];
 
-export const skill_gridList: gridListType[] = [
+export const skill_gridList: Skill[] = [
+  // Frontend
   {
     id: 1,
     name: "React",
-    level_tag: "Proficient",
-    level_tag_color: "green",
     icon: "/react.svg",
-    skill_category: "Frameworks",
+    category: "frontend",
+    note: "Dashboards, storefronts, UI kit",
   },
   {
     id: 2,
-    name: "Next JS",
-    level_tag: "Proficient",
-    level_tag_color: "green",
+    name: "Next.js",
     icon: "/next-js.svg",
-    skill_category: "Frameworks",
+    category: "frontend",
+    note: "E-commerce storefront, this site",
   },
   {
     id: 3,
-    name: "FastAPI",
-    level_tag: "Advanced",
-    level_tag_color: "red",
-    icon: "/FastAPI.svg",
-    skill_category: "Frameworks",
+    name: "TypeScript",
+    icon: "/typescript.svg",
+    category: "frontend",
+    note: "Default for every frontend",
   },
   {
     id: 4,
-    name: "PostgreSQL",
-    level_tag: "Advanced",
-    level_tag_color: "red",
-    icon: "/postgresql.svg",
-    skill_category: "Databases",
+    name: "JavaScript",
+    icon: "/javascript.svg",
+    category: "frontend",
+    note: "ES2020+, Node tooling",
   },
   {
     id: 5,
-    name: "MongoDB",
-    level_tag: "Intermediate",
-    level_tag_color: "orange",
-    icon: "/mongodb.svg",
-    skill_category: "Databases",
+    name: "Tailwind CSS",
+    icon: "/tailwindcss.svg",
+    category: "frontend",
+    note: "Utility-first styling, this site",
   },
   {
     id: 6,
-    name: "Python",
-    level_tag: "Advanced",
-    level_tag_color: "red",
-    icon: "/python.svg",
-    skill_category: "Prog_lang",
+    name: "D3.js",
+    icon: "/d3.svg",
+    category: "frontend",
+    note: "20k-point plots, network graphs",
   },
   {
     id: 7,
-    name: "TypeScript",
-    level_tag: "Proficient",
-    level_tag_color: "green",
-    icon: "/typescript.svg",
-    skill_category: "Prog_lang",
+    name: "SwiftUI",
+    icon: "/swift.svg",
+    category: "frontend",
+    note: "EchoDolphin macOS app",
   },
+  // Backend
   {
     id: 8,
-    name: "JavaScript",
-    level_tag: "Proficient",
-    level_tag_color: "green",
-    icon: "/javascript.svg",
-    skill_category: "Prog_lang",
+    name: "Python",
+    icon: "/python.svg",
+    category: "backend",
+    note: "APIs, automation, PDF generation",
   },
   {
     id: 9,
-    name: "Amazon Web Service",
-    level_tag: "Advanced",
-    level_tag_color: "red",
-    icon: "/aws.svg",
-    skill_category: "Cloud",
+    name: "FastAPI",
+    icon: "/FastAPI.svg",
+    category: "backend",
+    note: "Data portal with MFA and reports",
   },
   {
     id: 10,
-    name: "Linux",
-    level_tag: "Intermediate",
-    level_tag_color: "orange",
-    icon: "/linux-tux.svg",
-    skill_category: "Tools",
+    name: "C++",
+    icon: "/cplusplus.svg",
+    category: "backend",
+    note: "3.5 years, 100k+ LOC migration",
   },
+  // Databases
   {
     id: 11,
-    name: "Docker",
-    level_tag: "Advanced",
-    level_tag_color: "red",
-    icon: "/docker.svg",
-    skill_category: "Tools",
+    name: "PostgreSQL",
+    icon: "/postgresql.svg",
+    category: "databases",
+    note: "Schema design, RLS, triggers",
   },
   {
     id: 12,
-    name: "Github",
-    level_tag: "Intermediate",
-    level_tag_color: "orange",
-    icon: "/github.svg",
-    skill_category: "Tools",
+    name: "Supabase",
+    icon: "/supabase.svg",
+    category: "databases",
+    note: "Auth, storage, edge functions",
+  },
+  {
+    id: 13,
+    name: "MongoDB",
+    icon: "/mongodb.svg",
+    category: "databases",
+    note: "Scientific data portal",
+  },
+  // Cloud & DevOps
+  {
+    id: 14,
+    name: "AWS",
+    icon: "/aws.svg",
+    category: "cloud",
+    note: "Production deployments",
+  },
+  {
+    id: 15,
+    name: "Azure Functions",
+    icon: "/azure.svg",
+    category: "cloud",
+    note: "Scheduled geolocation pipeline",
+  },
+  {
+    id: 16,
+    name: "Docker",
+    icon: "/docker.svg",
+    category: "cloud",
+    note: "Containerised services",
+  },
+  {
+    id: 17,
+    name: "Linux",
+    icon: "/linux-tux.svg",
+    category: "cloud",
+    note: "Servers, shell, deployments",
+  },
+  // Tools
+  {
+    id: 18,
+    name: "Git & GitHub",
+    icon: "/git.svg",
+    category: "tools",
+    note: "Branching, reviews, CI",
+  },
+];
+
+export type Experience = {
+  id: number;
+  company: string;
+  role: string;
+  period: string;
+  location?: string;
+  summary: string;
+  stack: string[];
+};
+
+/** Keep dates here in sync with the project periods below. */
+export const experience_list: Experience[] = [
+  {
+    id: 1,
+    company: "AppGrape",
+    role: "Full Stack Engineer",
+    period: "Oct 2024 - Present",
+    summary:
+      "Shipped a B2B e-commerce platform, a five-module ERP, a multi-tenant dashboard builder, and an on-device macOS transcription app for a small product studio.",
+    stack: ["Next.js", "React", "TypeScript", "PostgreSQL", "Supabase", "SwiftUI"],
+  },
+  {
+    id: 2,
+    company: "GrepBio",
+    role: "Full Stack Engineer",
+    period: "Oct 2024 - Sep 2025",
+    summary:
+      "Built a customer-facing RNA-seq analysis portal for 100+ scientists: 50 GB uploads, 20k-point interactive plots, MFA, and on-demand LaTeX reports. Dates overlap with AppGrape — this was concurrent work.",
+    stack: ["React", "TypeScript", "FastAPI", "MongoDB", "D3.js"],
+  },
+  {
+    id: 3,
+    company: "Renault Nissan",
+    role: "Software Engineer",
+    period: "Jan 2021 - Sep 2024",
+    summary:
+      "One of six engineers migrating a 100k+ line C++ codebase from CATIA V6 to 3DEXPERIENCE. Built a Python review tool that sped the migration up 4x and is still in use.",
+    stack: ["C++", "Python", "3DEXPERIENCE"],
   },
 ];
 
 export type ProjectMedia =
-  | { kind: "video"; src: string; mime: string }
+  | { kind: "video"; src: string; mime: string; poster?: string }
   | { kind: "image"; src: string; alt: string }
   | { kind: "youtube"; videoId: string };
+
+export type ProjectLinks = {
+  live?: string;
+  source?: string;
+};
 
 export type PortfolioProject = {
   id: number;
@@ -119,19 +216,34 @@ export type PortfolioProject = {
   title: string;
   company: string;
   period: string;
+  role?: string;
+  team?: string;
   description: string;
   highlights: string[];
   article?: string[];
   tags: string[];
   impact?: string;
   media?: ProjectMedia;
+  /** Add `live` / `source` URLs here and they render on the card and project page. */
+  links?: ProjectLinks;
 };
 
-export const portfolio_filter_list = [
-  "All",
-  "AppGrape",
-  "GrepBio",
-  "Renault Nissan",
+/** Thumbnail for a project card; falls back to `null` when there is no media. */
+export function projectThumbnail(project: PortfolioProject) {
+  const media = project.media;
+  if (!media) return null;
+  if (media.kind === "youtube") {
+    return `https://i.ytimg.com/vi/${media.videoId}/hqdefault.jpg`;
+  }
+  if (media.kind === "image") return media.src;
+  return media.poster ?? null;
+}
+
+export const portfolio_filter_list: FilterOption[] = [
+  { label: "All", value: "all" },
+  { label: "AppGrape", value: "AppGrape" },
+  { label: "GrepBio", value: "GrepBio" },
+  { label: "Renault Nissan", value: "Renault Nissan" },
 ];
 
 export const portfolio_gridList: PortfolioProject[] = [
@@ -154,10 +266,13 @@ export const portfolio_gridList: PortfolioProject[] = [
       "The hardest part was the product schema itself. Each item has attributes, and variants are mapped from combinations of those attributes. Images are often mapped to color so the correct photo appears when a shopper selects a swatch. That model sits in PostgreSQL, with nested attributes and image assets in Supabase, behind a Next.js storefront tuned for page-load performance.",
     ],
     tags: ["Next.js", "PostgreSQL", "Supabase", "Payments"],
+    role: "Full stack",
+    team: "Solo build",
     media: {
       kind: "video",
       src: "/e-commerce.mp4",
       mime: "video/mp4",
+      poster: "/e-commerce-poster.jpg",
     },
   },
   {
@@ -181,6 +296,7 @@ export const portfolio_gridList: PortfolioProject[] = [
     ],
     tags: ["PostgreSQL", "CRM", "WhatsApp API", "Automation"],
     impact: "50% faster operations",
+    role: "Full stack",
     media: { kind: "youtube", videoId: "beqTKKTOWZ0" },
   },
   {
@@ -193,6 +309,7 @@ export const portfolio_gridList: PortfolioProject[] = [
       kind: "video",
       src: "/heatmap_new.mp4",
       mime: "video/mp4",
+      poster: "/heatmap_new-poster.jpg",
     },
     description:
       "War-room dashboard that turns workforce GPS into a live heatmap, with PostgreSQL aggregates and Azure Functions for real-time queries.",
@@ -205,7 +322,8 @@ export const portfolio_gridList: PortfolioProject[] = [
       "A third-party tracking application supplied latitude and longitude through its APIs. An Azure edge function pulled those points every five minutes. We stored them in Airtable and kept Supabase as a backup. The pipeline only runs between 6am and 11pm, which is also enforced in Azure, so we are not collecting overnight.",
       "The war-room dashboard turns those points into an interactive heatmap so staff can see sitter distribution in real time. Writing rows to the database was straightforward. Building the heatmap was not - it was new ground and used Leaflet and Mapbox, both open source. Aggregate queries and triggers in Supabase (PostgreSQL) keep the map cheap to refresh while the conference is running.",
     ],
-    tags: ["React", "Azure", "PostgreSQL", "Supabase"],
+    tags: ["React", "Azure", "PostgreSQL", "Leaflet"],
+    role: "Full stack",
   },
   {
     id: 4,
@@ -226,6 +344,7 @@ export const portfolio_gridList: PortfolioProject[] = [
       "AppGrape Business ERP sits on this library because it is a dashboard. EchoDolphin does not - it is a macOS app with its own stack. The e-commerce site also has its own UI and does not use Studio.",
     ],
     tags: ["React", "TypeScript", "PostgreSQL", "Multi-tenant"],
+    role: "Full stack",
     media: { kind: "youtube", videoId: "NPQ5I8WnZ5Y" },
   },
   {
@@ -248,6 +367,8 @@ export const portfolio_gridList: PortfolioProject[] = [
     ],
     tags: ["SwiftUI", "WhisperKit", "React", "macOS"],
     impact: "400+ users",
+    role: "Full stack + macOS",
+    links: { live: "https://www.echodolphin.com/" },
     media: { kind: "youtube", videoId: "CtwyhkKGUiI" },
   },
   {
@@ -270,10 +391,12 @@ export const portfolio_gridList: PortfolioProject[] = [
     ],
     tags: ["React", "FastAPI", "MongoDB", "D3.js"],
     impact: "100+ active users",
+    role: "Full stack",
     media: {
       kind: "video",
       src: "/rBoard_demo.mp4",
       mime: "video/mp4",
+      poster: "/rBoard_demo-poster.jpg",
     },
   },
   {
@@ -281,7 +404,8 @@ export const portfolio_gridList: PortfolioProject[] = [
     slug: "migration-automation-tool",
     title: "Migration automation tool",
     company: "Renault Nissan",
-    period: "Solo initiative",
+    period: "2021 - 2024",
+    role: "Solo initiative",
     description:
       "Python tool that flagged unhandled pointers, missing checks, and deprecated APIs, becoming a lasting team standard after I left.",
     highlights: [
@@ -303,6 +427,7 @@ export const portfolio_gridList: PortfolioProject[] = [
     title: "C++ codebase migration to 3DEXPERIENCE",
     company: "Renault Nissan",
     period: "Jan 2021 - Sep 2024",
+    team: "6 engineers",
     description:
       "Team of six migrating 100,000+ lines of C++ from CATIA V6 so the codebase would run correctly inside Dassault’s 3DEXPERIENCE platform.",
     highlights: [

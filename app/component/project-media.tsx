@@ -42,6 +42,7 @@ export default function ProjectMediaPlayer({
         controls
         playsInline
         preload="metadata"
+        poster={media.poster}
         title={title}
         className={`${frame} bg-black`}
       >
@@ -57,6 +58,7 @@ export default function ProjectMediaPlayer({
       title={title}
       allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
       allowFullScreen
+      loading="lazy"
       className={`${frame} border-0 bg-black`}
     />
   );

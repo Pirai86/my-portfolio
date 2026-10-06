@@ -1,36 +1,43 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Piraisudan R — Portfolio
 
-## Getting Started
+Personal portfolio for a full stack engineer: selected projects with case-study write-ups, an experience timeline, and a skills overview.
 
-First, run the development server:
+Built with **Next.js 16 (App Router)**, **React 19**, **TypeScript**, and **Tailwind CSS v4**. Deployed on Vercel.
+
+## Highlights
+
+- Statically generated project pages (`/portfolio/[slug]`) with per-project Open Graph images, JSON-LD (`Person`, `WebSite`, `ItemList`, `CreativeWork`, `BreadcrumbList`), sitemap, and robots.
+- All content lives in one typed file: [`app/data/data.ts`](app/data/data.ts) (skills, experience, projects). No CMS.
+- Lightweight motion: CSS keyframes for the hero, an `IntersectionObserver`-based `<Reveal>` for scroll-in, and `prefers-reduced-motion` respected globally.
+- No UI library; every component is in [`app/component`](app/component).
+
+## Running locally
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
+pnpm install
 pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open <http://localhost:3000>.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Editing content
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+| What               | Where                                            |
+| ------------------ | ------------------------------------------------ |
+| Name, email, links | `app/lib/site.ts`                                |
+| Résumé page        | `/resume` — print-friendly; recruiters can Save as PDF             |
+| Résumé PDF         | Optional: set `RESUME_URL` in `app/lib/site.ts` and put the file in `public/` |
+| Experience         | `experience_list` in `app/data/data.ts`          |
+| Skills             | `skill_gridList` in `app/data/data.ts`           |
+| Projects           | `portfolio_gridList` in `app/data/data.ts` (add `links.live` / `links.source` to show buttons) |
 
-## Learn More
+Demo videos are re-encoded to 720p H.264 and stored in `public/`; poster frames sit alongside them as `*-poster.jpg`.
 
-To learn more about Next.js, take a look at the following resources:
+## Scripts
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+```bash
+pnpm dev     # start dev server
+pnpm build   # production build
+pnpm start   # serve the production build
+pnpm lint    # eslint
+```

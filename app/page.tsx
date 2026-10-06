@@ -1,33 +1,30 @@
 import SiteHeader from "@/app/component/site-header";
 import HeroSection from "@/app/sections/heroSection";
-import WhoAmISection from "@/app/sections/who-am-i-section";
-import FooterSection from "@/app/sections/footerSection";
+import AboutSection from "@/app/sections/about-section";
+import SkillsSection from "@/app/sections/skills-section";
 import PortfolioSection from "@/app/sections/portfolio-section";
+import FooterSection from "@/app/sections/footerSection";
 import JsonLd from "@/app/component/json-ld";
 import {
   getPersonJsonLd,
   getPortfolioItemListJsonLd,
   getWebsiteJsonLd,
 } from "@/app/lib/site";
-import { Analytics } from "@vercel/analytics/next";
 
 export default function Home() {
   return (
     <>
-      <Analytics />
-      <div
-        id="main-content"
-        className="h-screen w-full overflow-x-hidden overflow-y-scroll bg-white"
-      >
-        <JsonLd data={getPersonJsonLd()} />
-        <JsonLd data={getWebsiteJsonLd()} />
-        <JsonLd data={getPortfolioItemListJsonLd()} />
-        <SiteHeader />
+      <JsonLd data={getPersonJsonLd()} />
+      <JsonLd data={getWebsiteJsonLd()} />
+      <JsonLd data={getPortfolioItemListJsonLd()} />
+      <SiteHeader />
+      <main id="main-content" className="flex-1">
         <HeroSection />
-        <WhoAmISection />
+        <AboutSection />
+        <SkillsSection />
         <PortfolioSection />
-        <FooterSection />
-      </div>
+      </main>
+      <FooterSection />
     </>
   );
 }

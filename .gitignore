@@ -9,6 +9,8 @@
 !.yarn/plugins
 !.yarn/releases
 !.yarn/versions
+*.pdf
+!public/*.pdf
 
 # testing
 /coverage
@@ -26,7 +28,7 @@
 
 # debug
 npm-debug.log*
-yarn-debug.log*
+yarn-debug.log*₹
 yarn-error.log*
 .pnpm-debug.log*
 

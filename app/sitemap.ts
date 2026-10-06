@@ -12,6 +12,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: "monthly",
       priority: 1,
     },
+    {
+      url: absoluteUrl("/resume"),
+      lastModified,
+      changeFrequency: "monthly",
+      priority: 0.9,
+    },
     ...portfolio_gridList.map((project) => ({
       url: absoluteUrl(`/portfolio/${project.slug}`),
       lastModified,
